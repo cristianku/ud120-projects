@@ -14,7 +14,7 @@ features_train, labels_train, features_test, labels_test = makeTerrainData()
 ########################## SVM #################################
 ### we handle the import statement and SVC creation for you here
 from sklearn.svm import SVC
-clf = SVC(kernel="linear")
+clf = SVC(kernel="linear",gamma = 100.0,C=100000 )
 clf.fit(features_train, labels_train)
 pred = clf.predict(features_test)
 
