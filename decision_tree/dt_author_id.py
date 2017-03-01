@@ -19,8 +19,23 @@ from email_preprocess import preprocess
 ### labels_train and labels_test are the corresponding item labels
 features_train, features_test, labels_train, labels_test = preprocess()
 
+#features_train = features_train[:len(features_train)/10]
+#labels_train = labels_train[:len(labels_train)/10]
 
+print len(features_train)
 
+print len(features_train[0])
+
+from sklearn import tree
+
+clf = tree.DecisionTreeClassifier(min_samples_split=40)
+clf = clf.fit(features_train, labels_train )#
+#
+pred = clf.predict(features_test)
+#
+from sklearn.metrics import accuracy_score
+acc = accuracy_score (pred, labels_test)
+print ( acc)
 
 #########################################################
 ### your code goes here ###
