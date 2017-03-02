@@ -16,6 +16,14 @@ ages_train, ages_test, net_worths_train, net_worths_test = ageNetWorthData()
 
 reg = studentReg(ages_train, net_worths_train)
 
+print "Slope : " , reg.coef_
+
+print "Intercept : " , reg.intercept_
+
+print "Score on test data: " , reg.score(ages_test, net_worths_test)
+
+print "Score on train data: " , reg.score(ages_train, net_worths_train)
+
 
 plt.clf()
 plt.scatter(ages_train, net_worths_train, color="b", label="train data")
